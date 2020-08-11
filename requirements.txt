@@ -1,0 +1,10 @@
+distro==1.5.0
+numpy==1.19.1
+pandas==1.1.0
+psutil==5.7.2
+python-dateutil==2.8.1
+python-dotenv==0.14.0
+pytz==2020.1
+six==1.15.0
+SQLAlchemy==1.3.18
+tabula-py==2.1.1
