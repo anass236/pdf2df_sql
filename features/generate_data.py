@@ -34,6 +34,9 @@ def list_pdf2df_parallel(w_path) -> pd.DataFrame:
     print("--Generate Unsaved pdf raws files--\n")
     list_files = [w_path+'\\data\\raws\\'+file for file in os.listdir(w_path+'\\data\\raws')
                   if not fnmatch.fnmatch(file, "*-saved.pdf") and file.endswith(".pdf")]
+    if len(list_files) == 0:
+        print('No Raw File data found, exit the program')
+        exit()
     pool = Pool(mp.cpu_count())
     df = pd.concat(pool.map(pdf2df, list_files))
     pool.close()
